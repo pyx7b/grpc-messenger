@@ -13,6 +13,7 @@ def run_grpc_client():
     try:
         channel = grpc.insecure_channel(f'{server}:{port}')
         stub = pb2_grpc.EchoServiceStub(channel)
+        logger.info(f'Connected to server at {server}:{port}')
     except Exception as e:
         logger.error(f'Error connecting to server: {e}')
         return
@@ -24,6 +25,10 @@ def run_grpc_client():
 
     # Handle the response
     logger.info(f'Server response: {message}')
+
+    # Close the gRPC channel when you are done
+    channel.close()
+    logger.info('gRPC channel closed')
 
 
 if __name__ == "__main__":

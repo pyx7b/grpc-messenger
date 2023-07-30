@@ -1,23 +1,24 @@
 # Introduction
-
+This is gRPC client in python talking to a gRPC server on nodeJS.
 
 # Server
+Assume you have git clone the code.
 
-1. Install package
+1. Go to server directory and install the npm packages:
 ```
+cd server
 npm install
 ```
 
-2. Start server
+2. Start the node server locally. It runs on port `50051`, change it to something else if thre is a conflicts.
 ```
 npm start
-
 ```
 Note that we are using `nodemon` for development purpose.
 
 # Client
-
-1. Installation:
+Obviously, a server needs a client to talk to:
+1. Setup the ypthog
 
 ```
 cd client
@@ -31,7 +32,7 @@ pip install grpcio grpcio-tools
 python -m grpc_tools.protoc -I.. --python_out=. --grpc_python_out=. ../Message.proto
 ```
 
-3. Run
+3. Client sends test message to server via gRPC:
 ```
-python3 
+python3 client.py
 ```
