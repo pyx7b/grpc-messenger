@@ -18,7 +18,7 @@ Note that we are using `nodemon` for development purpose.
 
 # Client
 Obviously, a server needs a client to talk to:
-1. Setup the ypthog
+1. Setup the pyhon environent:
 
 ```
 cd client
@@ -27,7 +27,7 @@ source venv/bin/activate
 pip install grpcio grpcio-tools
 ```
 
-2. Use the protoc compiler with the grpcio-tools plugin to generate the Python files in the current directory directory for `Message.proto` in the parent directoy `-I..`:
+2. Use the protoc compiler with the grpcio-tools plugin to generate the Python files in the current directory from `Message.proto` file in the parent directoy `-I..`:
 ```
 python -m grpc_tools.protoc -I.. --python_out=. --grpc_python_out=. ../Message.proto
 ```
