@@ -3,7 +3,7 @@ syntax = "proto3";
 package messagePackage;
 
 message EchoRequest {
-  string message = 1;
+  string message = 2;
 }
 
 message EchoResponse {
