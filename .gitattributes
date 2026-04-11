@@ -1,2 +1,3 @@
 *.proto
-secrets/*
+# Encrypt an entire directory
+secrets/* filter=git-crypt diff=git-crypt
